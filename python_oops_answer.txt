@@ -1,0 +1,246 @@
+Q1. what is the purpose of python's oop?
+>The purpose of Python's object-oriented programming (OOP) is to provide a programming paradigm that allows for the
+ organization and management of code in a modular and reusable manner. OOP is based on the concept of objects, which
+ are instances of classes. 
+ 
+Q2. Where does an inheritance search look for an attribute? 
+>In Python, when you access an attribute on an object, the inheritance search looks for the attribute in a specific 
+order called the method resolution order (MRO). The MRO defines the sequence in which Python looks for attributes in
+a class hierarchy.
+The MRO is determined by the class's inheritance hierarchy. When you access an attribute on an object, Python first 
+checks if the attribute exists in the object itself. If it doesn't find the attribute, it proceeds to search for it 
+in the class of the object, and then in the superclass, and so on, following the MRO.
+
+Q3. How do you distinguish between a class object and an instance object?
+>Class Object: A class object represents the blueprint or template for creating instances (objects) of that class. 
+It defines the attributes (data) and methods (functions) that instances of the class will possess. In Python, a class
+is defined using the class keyword. 
+Instance Object: An instance object, also referred to as an instance, is a specific occurrence or realization of a class.
+It is created using the class as a constructor. Each instance of a class has its own set of attributes, which can be 
+distinct from other instances of the same class. Instances can also call the methods defined in the class. 
+
+Q4. What makes the first argument in a class’s method function special?
+>In Python, the first argument in a class's method function is conventionally named self, although you can choose a 
+different name if you prefer. The self parameter represents the instance of the class on which the method is called. 
+It is a reference to the specific object or instance through which the method is being invoked.
+
+Q5. What is the purpose of the init method?
+>The __init__ method is a special method in Python classes, also known as the constructor method. It is automatically
+called when you create an instance (object) of a class. The purpose of the __init__ method is to initialize the object's
+attributes or perform any setup that is required for the object to be in a valid state.
+
+Q6. What is the process for creating a class instance?
+> class MyClass:
+    def __init__(self, attribute):
+        self.attribute = attribute
+
+    def my_method(self):
+        pass
+		
+  my_object = MyClass("example")
+  print(my_object.attribute)  
+  my_object.my_method()
+  
+Q7. What is the process for creating a class?
+> class MyClass:
+    def __init__(self, attribute):
+        self.attribute = attribute
+
+    def my_method(self):
+        pass
+		
+Q8. How would you define the superclasses of a class?
+>   #super class
+	class Animal:
+		def speak(self):
+			print("Animal speaks")  
+			
+	#child class
+	class Dog(Animal):
+		def bark(self):
+			print("Dog barks")
+		
+Q9. What is the relationship between classes and modules?
+>In Python, a module is a file containing Python code, while a class is a code construct that defines the blueprint
+for creating objects and organizing related functions and data.
+The relationship between classes and modules in Python is that classes can be defined within modules. In other words,
+a module can contain one or more classes along with other functions, variables, and statements.
+
+Q10. How do you make instances and classes?
+>  class MyClass: #class
+    def __init__(self, attribute):
+        self.attribute = attribute
+
+    def my_method(self):
+        pass
+		
+  my_object = MyClass("example")
+  print(my_object.attribute)  
+  my_object.my_method() #instance
+  
+Q11. Where and how should be class attributes created?
+> class MyClass:
+    class_attribute = 123
+
+    def __init__(self, instance_attribute):
+        self.instance_attribute = instance_attribute
+
+	# Accessing class attribute
+	print(MyClass.class_attribute)  # Output: 123
+
+	# Creating instances
+	obj1 = MyClass("Instance 1")
+	obj2 = MyClass("Instance 2")
+
+	# Accessing instance attributes
+	print(obj1.instance_attribute)  # Output: Instance 1
+	print(obj2.instance_attribute)  # Output: Instance 2
+
+	# Modifying class attribute
+	MyClass.class_attribute = 456
+	print(obj1.class_attribute)     # Output: 456
+	print(obj2.class_attribute)     # Output: 456
+
+Q12. Where and how are instance attributes created?
+> class MyClass:
+    class_attribute = 123
+
+    def __init__(self, instance_attribute):
+        self.instance_attribute = instance_attribute
+
+	# Accessing class attribute
+	print(MyClass.class_attribute)  # Output: 123
+
+	# Creating instances
+	obj1 = MyClass("Instance 1")
+	obj2 = MyClass("Instance 2")
+
+	# Accessing instance attributes
+	print(obj1.instance_attribute)  # Output: Instance 1
+	print(obj2.instance_attribute)  # Output: Instance 2
+
+	# Modifying class attribute
+	MyClass.class_attribute = 456
+	print(obj1.class_attribute)     # Output: 456
+	print(obj2.class_attribute)     # Output: 456
+	
+Q13. What does the term "self" in a Python class mean?
+> By using the "self" parameter in instance methods, you provide a reference to the instance itself.
+It allows you to access the instance's attributes and call other methods defined in the class. It is used 
+to differentiate instance-specific data and behavior from class-level or static data and behavior.
+
+Q14. How does a Python class handle operator overloading?
+> __init__: This special method is used for initializing an instance of the class. It is automatically called
+ when a new object is created from the class.
+
+__str__: This special method is used to define a string representation of the object. It is invoked when you 
+use the str() function or when the object is printed using print().
+
+__add__: This special method is used to define the behavior of the addition operator (+). It allows you to specify 
+what should happen when two instances of the class are added together.
+
+__eq__: This special method is used to define the behavior of the equality operator (==). It determines whether
+ two instances of the class are considered equal.
+ 
+Q15. When do you consider allowing operator overloading of your classes?
+> You should consider allowing operator overloading in your classes when it enhances the clarity, expressiveness,
+and usability of your code.
+
+Q16. What is the most popular form of operator overloading?
+> In Python, one of the most popular forms of operator overloading is the addition operator (+) used for concatenating strings. 
+
+Q17. What are the two most important concepts to grasp in order to comprehend Python OOP code?
+> Classes and Objects , Inheritance and Polymorphism
+
+Q18. Describe three applications for exception processing.
+> Error Handling, Input Validation, Resource Management
+
+Q19. What happens if you don't do something extra to treat an exception?
+> If you don't handle an exception explicitly or provide any extra treatment for it, the exception will propagate up the
+ call stack until it reaches the top-level scope or an exception handler that can handle it. This propagation is known as
+ an "unhandled exception." When an exception is unhandled, it typically results in the termination of the program and the
+ display of an error message, along with a traceback that indicates the sequence of calls leading to the unhandled exception.
+ 
+Q20. What are your options for recovering from an exception in your script?
+> Using a try-except block, Catching all exceptions, Finally block, Raising a different exception
+
+Q21. Describe two methods for triggering exceptions in your script.
+> Using the raise statement, using Built-in functions or operations
+
+Q22. Identify two methods for specifying actions to be executed at termination time, regardless of
+whether or not an exception exists.
+> finally , atexit
+
+Q23. What is the purpose of the try statement?
+> The purpose of the try statement in Python is to define a block of code in which exceptions can occur. It allows you to handle 
+exceptional situations in a controlled manner by separating the normal flow of code from the exception handling logic.
+
+Q24. What are the two most popular try statement variations?
+> Basic try-except block, try-except-else block
+
+Q25. What is the purpose of the raise statement?
+> To trigger an exception implicitly.
+
+Q26. What does the assert statement do, and what other statement is it like?
+> The assert statement in Python is used to test whether a given condition is true. If the condition is false,
+it raises an AssertionError exception. Its purpose is to catch programming errors and detect situations that should never occur.
+
+Q27. What is the purpose of the with/as argument, and what other statement is it like?
+> The with/as statement in Python is used for context management, specifically for dealing with resources that need
+to be properly managed, such as files or network connections. It ensures that the resource is acquired and released
+correctly, even in the presence of exceptions.
+
+Q28. What are *args, **kwargs?
+> The *args syntax is used to pass a variable number of non-keyword arguments to a function. 
+**kwargs is used to pass a variable number of keyword arguments (or named arguments) to a function.
+The term "kwargs" stands for "keyword arguments.
+
+Q29. How can I pass optional or keyword parameters from one function to another?
+> o pass optional or keyword parameters from one function to another in Python, you can leverage the *args and 
+**kwargs syntax in combination with function invocation.
+
+Q30. What are Lambda Functions?
+> In Python, a lambda function, also known as an anonymous function, is a way to create small, one-line functions 
+without explicitly defining a function using the def keyword. Lambda functions are typically used for simple and 
+concise operations where a full function definition is not necessary.
+
+Q31. Explain Inheritance in Python with an example?
+> class Shape:
+    def area(self):
+        pass  # Placeholder method, to be overridden in child classes
+
+	class Rectangle(Shape):
+		def __init__(self, width, height):
+			self.width = width
+			self.height = height
+		
+		def area(self):
+			return self.width * self.height
+
+	class Circle(Shape):
+		def __init__(self, radius):
+			self.radius = radius
+		
+		def area(self):
+			return 3.14 * self.radius ** 2
+
+Q31. Suppose class C inherits from classes A and B as class C(A,B).Classes A and B both have their own versions of method func(). If we call func() from an object of class C, which version gets invoked?
+> In Python, when a class C inherits from multiple classes A and B (i.e., class C(A, B)), and both classes A and B have their own versions of a method func(), the order of method resolution is determined by the Method 
+Resolution Order (MRO) of C. The MRO defines the order in which the base classes are searched for a method or attribute.
+
+The MRO is determined by the C3 linearization algorithm, which follows a depth-first, left-to-right approach. 
+In simple terms, the MRO is constructed by starting with the most derived class (C) and traversing its inheritance 
+hierarchy from left to right, considering each class only once.
+
+Q33. Which methods/functions do we use to determine the type of instance and inheritance?
+>  The type() function returns the type of an object. It can be used to determine the type of an instance.
+
+Q34.Explain the use of the 'nonlocal' keyword in Python.
+> In Python, the nonlocal keyword is used to declare and access a variable from the nearest enclosing scope that is not
+global. It allows you to modify variables in an outer (but non-global) scope from within an inner scope such as a nested
+function or a closure.
+
+Q35. What is the global keyword?
+>In Python, the global keyword is used to declare and access a variable as a global variable within a function.
+It allows you to indicate that a variable defined inside a function should be treated as a global variable, accessible
+and modifiable throughout the entire program.
